@@ -1167,7 +1167,6 @@ FUNCTION {article}
       format.journal "journal" output.check
       add.blank
       format.vol.num.pages output
-      format.date "year" output.check
     }
     { format.article.crossref output.nonnull
       format.pages output
@@ -1178,6 +1177,7 @@ FUNCTION {article}
   new.block
   format.note output
   format.eprint output
+  format.date output
   fin.entry
 }
 FUNCTION {book}
@@ -1205,7 +1205,6 @@ FUNCTION {book}
     {
       new.block
       format.book.crossref output.nonnull
-      format.date "year" output.check
     }
   if$
   format.edition output
@@ -1214,22 +1213,23 @@ FUNCTION {book}
   new.block
   format.note output
   format.eprint output
+  format.date output
   fin.entry
 }
 FUNCTION {booklet}
 { output.bibitem
   format.authors output
-  new.block
+  new.blockhttps://www.overleaf.com/project/5c5029e329f19d62f6806917
   format.title "title" output.check
   new.block
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
-  format.date output
   new.block
   format.doi output
   new.block
   format.note output
   format.eprint output
+  format.date output
   fin.entry
 }
 
@@ -1394,7 +1394,6 @@ FUNCTION {misc}
   format.title output
   howpublished new.block.checka
   howpublished "howpublished" bibinfo.check output
-  format.date output
   new.block
   format.doi output
   new.block 
@@ -1402,6 +1401,7 @@ FUNCTION {misc}
   format.eprint output
   fin.entry
   empty.misc.check
+  format.date output
 }
 FUNCTION {phdthesis}
 { output.bibitem
@@ -1413,13 +1413,13 @@ FUNCTION {phdthesis}
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
-  format.date "year" output.check
   new.block
   format.doi output
   new.block
   format.note output
   format.eprint output
   fin.entry
+  format.date "year" output.check
 }
 
 FUNCTION {proceedings}
@@ -1472,12 +1472,12 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
-  format.date "year" output.check
   new.block
   format.doi output
   new.block
   format.note output
   format.eprint output
+  format.date output
   fin.entry
 }
 
@@ -1486,13 +1486,13 @@ FUNCTION {unpublished}
   format.authors "author" output.check
   new.block
   format.title "title" output.check
-  format.date output
   new.block
   format.doi output
   new.block
   format.note "note" output.check
   format.eprint output
   fin.entry
+  format.date output
 }
 
 FUNCTION {default.type} { misc }
